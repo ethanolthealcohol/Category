@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taste Treasures</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://www.benjielayug.com/wp-content/uploads/2014/08/Dining-area.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-color: #f5f5f5;
+        }
+
+        header {
+            background-color: #ffc107;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+                .navbar-nav {
+            display: flex;
+            justify-content: center; 
+            width: 100%;
+        }
+
+        .nav-item {
+            margin: 0 1rem; 
+        }
+
+        .nav-link {
+            color: #4a2c2a;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 0.5rem 1rem;
+            border: 2px solid #4a2c2a;
+            border-radius: 5px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .nav-link:hover {
+            background-color: #4a2c2a;
+            color: #ffcc00;
+        }
+
+        header .search-bar {
+            display: flex;
+            align-items: center;
+        }
+
+        header input[type="text"] {
+            padding: 5px;
+            font-size: 16px;
+        }
+
+        header button {
+            padding: 5px 10px;
+            margin-left: 5px;
+            background-color: #343a40;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        .categories {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .categories h2 {
+            font-size: 32px;
+            margin: 0;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card h3 {
+            margin: 10px 0;
+            font-size: 20px;
+        }
+
+        .card p {
+            color: #777;
+            padding: 0 10px;
+        }
+
+        .card button {
+            background-color: #ffc107;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .card button:hover {
+            background-color: #e0a800;
+        }
+
+        .recipe-page {
+            display: none;
+            background-color: rgba(255, 255, 255, 0.95);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow-y: auto;
+            padding: 20px;
+        }
+
+        .recipe-title {
+            background-color: #ffc107;
+            padding: 10px;
+            text-align: center;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .recipe-content {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .back-button {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+     <nav class="navbar navbar-expand-md bg-white navbar-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img src="https://static1.eyellowpages.ph/uploads/yp_business/photo/1566120/normal_1534905708-3421.jpg" alt="Logo" style="width: 40px; height: 40px;">
+                <h1>Buddy's</h1>
+            </a>
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://ethanolthealcohol.github.io/project2/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="category.html">Categories</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://ethanolthealcohol.github.io/FV_ICT9Ruby_Q2SW2_Belsa_Ethan/">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://ethanolthealcohol.github.io/submit/">Submit Recipe</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control" type="text" placeholder="search...">
+                    <button class="btn btn-success" type="button">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="categories">
+            <h2>Recipe Categories</h2>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <img src="https://sweetsimplevegan.com/wp-content/uploads/2021/03/filipino-Banana-Cue-sweet-simple-vegan3.jpg" alt="Banana Cue">
+                <h3>Banana Cue</h3>
+                <p>A popular Filipino snack made from fried bananas.</p>
+                <button onclick="showRecipe('bananaCue')">View Recipe</button>
+            </div>
+
+            <div class="card">
+                <img src="https://www.myfoodom.com/wp-content/uploads/2022/07/pancit-canton-500x500.jpg" alt="Pancit Canton">
+                <h3>Pancit Canton</h3>
+                <p>A flavorful noodle dish with a variety of vegetables.</p>
+                <button onclick="showRecipe('pancitCanton')">View Recipe</button>
+            </div>
+
+            <div class="card">
+                <img src="https://www.maggi.ph/sites/default/files/srh_recipes/3eb553f39b3c0d978fbb90169fb3d6a5.jpg" alt="Kare-Kare">
+                <h3>Kare-Kare</h3>
+                <p>A rich and savory Filipino stew with peanut sauce.</p>
+                <button onclick="showRecipe('kareKare')">View Recipe</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="recipePage" class="recipe-page">
+        <button class="btn btn-secondary back-button" onclick="goBack()">Back</button>
+        <div class="recipe-title" id="recipeTitle"></div>
+        <div class="recipe-content">
+            <h3>Ingredients</h3>
+            <ul id="recipeIngredients"></ul>
+            <h3>Instructions</h3>
+            <p id="recipeInstructions"></p>
+        </div>
+    </div>
+</body>
+</html>
